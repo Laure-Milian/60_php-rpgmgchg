@@ -13,6 +13,14 @@ Class Vegetable extends Product {
 		$this->harvestedAt = $harvestedAt;
 	}
 
+	public function getProductorName() {
+		return $this->productorName;
+	}
+
+	public function getHarvestedAt() {
+		return $this->harvestedAt;
+	}
+
 	public function isFresh() {
 		$current = time();
 		$harvest = $this->harvestedAt;

@@ -11,6 +11,10 @@ Class Cloth extends Product {
 		$this->brand = $brand;
 	}
 
+	public function getBrand() {
+		return $this->brand;
+	}
+
 	public function try() {
 
 	}

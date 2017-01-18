@@ -3,8 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Tableau des Utilisateurs</title>
-	<link rel="stylesheet" href="usersTable.css">
-	<?php $users = require('users.php'); ?>
+	<link rel="stylesheet" href="table.css">
 </head>
 <body>
 	<table>
@@ -13,7 +12,9 @@
 			<td>Id</td>
 			<td>Créé le</td>
 		</tr>
-		<?php foreach ($users as $user) : ?>
+		<?php 
+			$users = require('users.php');
+			foreach ($users as $user) : ?>
 		<tr>
 			<td><?= $user->getEmail(); ?></td>
 			<td><?= $user->getId(); ?></td>

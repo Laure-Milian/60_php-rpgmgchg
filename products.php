@@ -12,5 +12,4 @@ $cloth2 = new Cloth("cloth2", "pantalon", 30, "reallyNiceClothing");
 $cloth3 = new Cloth("cloth3", "chaussette", 5, "acceptableClothing");
 
 $products_array = [$vege1, $vege2, $cloth1, $cloth2, $cloth3];
-var_dump($products_array);
 return $products_array;
