@@ -3,10 +3,10 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
-	<link rel="stylesheet" href="table.css">
+<!-- 	<link rel="stylesheet" href="views/table.css"> -->
 	<?php
-	$products_arr = require 'products.php';
-	$clients_arr = require 'users.php';
+	$products_arr = require_once __DIR__ . '/data/products.php';
+	$clients_arr = require_once __DIR__ . '/data/users.php';
 	?>
 </head>
 <body>
