@@ -37,7 +37,3 @@ class User {
 		$this->created_at = $created_at;
 	}
 }
-
-$user1 = new User("bla", 56, 3091990);
-
-var_dump($user1);
