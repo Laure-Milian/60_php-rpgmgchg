@@ -9,6 +9,3 @@ function getUsers() {
 
 	return $users;
 }
-
-var_dump(getUsers());
-
