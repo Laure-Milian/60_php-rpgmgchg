@@ -1,6 +1,6 @@
 <?php 
 
-require 'product.php';
+require_once 'product.php';
 
 Class Cloth extends Product {
 
@@ -16,6 +16,3 @@ Class Cloth extends Product {
 	}
 
 }
-
-$tshirt = new Cloth("riojri", "tshirt", 55, "niceClothing");
-var_dump($tshirt);

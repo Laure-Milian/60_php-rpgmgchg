@@ -1,6 +1,6 @@
 <?php
 
-require 'product.php';
+require_once 'product.php';
 
 Class Vegetable extends Product {
 
@@ -25,9 +25,3 @@ Class Vegetable extends Product {
 		}
 	}
 }
-
-
-$carotte = new Vegetable("id1", "carotte", 5, "Judy Hopps", "1484732020");
-var_dump($carotte);
-
-echo $carotte->isFresh();
