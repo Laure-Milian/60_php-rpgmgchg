@@ -6,11 +6,12 @@ class User {
 	private $created_at;
 
 	public function __construct($email, $id, $created_at) {
-		$this->email = $email;
-		$this->id = $id;
-		$this->created_at = $created_at;
+		$this->setEmail($email);
+		$this->setId($id);
+		$this->setCreatedAt($created_at);
 	}
 
+	// Getters
 	public function getEmail() {
 		return $this->email;
 	}
@@ -21,6 +22,19 @@ class User {
 
 	public function getCreatedAt() {
 		return $this->created_at;
+	}
+
+	// Setters
+	public function setEmail($email) {
+		$this->email = $email;
+	}
+
+	public function setId($id) {
+		$this->id = $id;
+	}
+
+	public function setCreatedAt($created_at) {
+		$this->created_at = $created_at;
 	}
 }
 
