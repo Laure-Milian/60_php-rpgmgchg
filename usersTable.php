@@ -13,9 +13,7 @@
 			<td>Id</td>
 			<td>Créé le</td>
 		</tr>
-		<?php 
-			foreach ($users as $user) : 
-		?>
+		<?php foreach ($users as $user) : ?>
 		<tr>
 			<td><?= $user->getEmail(); ?></td>
 			<td><?= $user->getId(); ?></td>

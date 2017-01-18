@@ -7,9 +7,9 @@ class Product {
 	private $price;	
 
 	public function __construct($id, $name, $price) {
-		$this->id = $id;
-		$this->name = $name;
-		$this->price = $price;
+		$this->setId($id);
+		$this->setName($name);
+		$this->setPrice($price);
 	}
 
 	public function getId() {
@@ -24,7 +24,16 @@ class Product {
 		return $this->price;
 	}
 
-}
+	public function setId($id) {
+		$this->id = $id;
+	}
 
-$p = new Product(1, "choux", "22");
-var_dump($p);
+	public function setName($name) {
+		$this->name = $name;
+	}
+
+	public function setPrice($price) {
+		$this->price = $price;
+	}
+
+}
