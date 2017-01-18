@@ -2,15 +2,13 @@
 
 require 'product.php';
 
-class Vegetable extends Product {
+Class Vegetable extends Product {
 
 	private $productorName;
 	private $harvestedAt;
 
 	public function __construct($id, $name, $price, $productorName, $harvestedAt) {
-		parent::setId($id);
-		parent::setName($name);
-		parent::setPrice($price);
+		parent::__construct($id, $name, $price);
 		$this->productorName = $productorName;
 		$this->harvestedAt = $harvestedAt;
 	}
