@@ -3,7 +3,8 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Tableau des Utilisateurs</title>
-	<?php require 'users.php'; ?>
+	<link rel="stylesheet" href="usersTable.css">
+	<?php $users = require('users.php'); ?>
 </head>
 <body>
 	<table>
@@ -13,7 +14,6 @@
 			<td>Créé le</td>
 		</tr>
 		<?php 
-			$users = getUsers();
 			foreach ($users as $user) : 
 		?>
 		<tr>
