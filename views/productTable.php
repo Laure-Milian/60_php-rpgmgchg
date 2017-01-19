@@ -1,3 +1,4 @@
+<?php $products = require $_SERVER['DOCUMENT_ROOT'] . '/data/products.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,7 +17,6 @@
 			<td>Brand</td>
 		</tr>
 		<?php 
-		$products = require './data/products.php';
 		foreach ($products as $product) : ?>
 		<tr>
 
@@ -26,7 +26,7 @@
 
 			<?php 
 				$id = $product->getId();
-				if (strstr($id, 'vege')) : 
+				if (is_a($product, 'Vegetable')) : 
 			?>
 			
 				<td><?= $product->getProductorName(); ?></td>

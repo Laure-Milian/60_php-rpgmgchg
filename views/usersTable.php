@@ -1,3 +1,4 @@
+<?php $users = require $_SERVER['DOCUMENT_ROOT'] . '/data/users.php'; ?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -13,7 +14,6 @@
 			<td>Créé le</td>
 		</tr>
 		<?php 
-			$users = require './data/users.php';
 			foreach ($users as $user) : ?>
 		<tr>
 			<td><?= $user->getEmail(); ?></td>

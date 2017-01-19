@@ -5,8 +5,8 @@
 	<title>Document</title>
 <!-- 	<link rel="stylesheet" href="views/table.css"> -->
 	<?php
-	$products_arr = require_once __DIR__ . '/data/products.php';
-	$clients_arr = require_once __DIR__ . '/data/users.php';
+	$products_arr = require_once $_SERVER['DOCUMENT_ROOT'] . '/data/products.php';
+	$clients_arr = require_once $_SERVER['DOCUMENT_ROOT'] . '/data/users.php';
 	?>
 </head>
 <body>
@@ -52,7 +52,7 @@
 	<ul>
 		<li>Identifiant client : <?= $client2->getId() ?></li>
 		<li>Montant de la facture : <?= $client2->getBillAmount(); ?> </li>
-		<li>Produit acheté : 
+		<li>Produits achetés : 
 			<table>		
 			<?php $panier = $client2->getCart();
 				foreach ($panier as $boughtProduct) : ?>

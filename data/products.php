@@ -1,7 +1,7 @@
 <?php
 
-require_once './models/vegetable.php';
-require_once './models/cloth.php';
+require_once  $_SERVER['DOCUMENT_ROOT'] . '/models/vegetable.php';
+require_once  $_SERVER['DOCUMENT_ROOT'] .'/models/cloth.php';
 
 $vege1 = new Vegetable("vege1", "carotte", 5, "Judy Hopps", "1484732020");
 $vege2 = new Vegetable("vege2", "laitue", 2, "Caroline", "2484732020");
