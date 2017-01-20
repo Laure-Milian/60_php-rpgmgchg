@@ -11,15 +11,20 @@
 	<?php 
 	$idClient = $_POST["selectClient"];
 	$selected_products = [$_POST["selectProduct1"], $_POST["selectProduct2"], $_POST["selectProduct3"]]; 
-	$len = count($selected_products);
 
-	foreach ($products as $product) {
-		for ($i = 0 ; $i < $len ; $i++) {
-			if ($product->getId() === $selected_products[$i]) {
-				var_dump($product);
+	function findProducts($selected_products, $products) {
+		$len = count($selected_products);
+		foreach ($products as $product) {
+			for ($i = 0 ; $i < $len ; $i++) {
+				if ($product->getId() === $selected_products[$i]) {
+					return $product;
+				}
 			}
+
 		}
 	}
+
+	var_dump(findProducts($selected_products, $products));
 
 
 
