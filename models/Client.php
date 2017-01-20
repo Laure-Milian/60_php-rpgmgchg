@@ -1,6 +1,6 @@
 <?php
 
-require_once $_SERVER['DOCUMENT_ROOT'] . '/models/user.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/models/User.php';
 
 Class Client extends User {
 

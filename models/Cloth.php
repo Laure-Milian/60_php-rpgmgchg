@@ -1,6 +1,6 @@
 <?php 
 
-require_once $_SERVER['DOCUMENT_ROOT'] . '/models/product.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/models/Product.php';
 
 Class Cloth extends Product {
 

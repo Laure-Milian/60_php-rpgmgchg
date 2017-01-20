@@ -9,7 +9,7 @@
 </head>
 <body>
 
-	<form action="/" method="post">
+	<form action="/validateOrder.php" method="post">
 
 		<div>
 			<label for="selectClient">Sélectionner un client : </label>
@@ -24,7 +24,7 @@
 			<label for="selectProduct1">Sélection un 1er produit :</label>
 			<select name="selectProduct1" id="selectProduct1">
 				<?php foreach ($products as $product): ?>
-					<option value="<?= $product->getName() ?>"> <?= $product->getName(); ?> </option>
+					<option value="<?= $product->getId() ?>"> <?= $product->getName(); ?> </option>
 				<?php endforeach ?>
 			</select>
 		</div>
@@ -33,7 +33,7 @@
 			<label for="selectProduct2">Sélection un 2è produit :</label>
 			<select name="selectProduct2" id="selectProduct2">
 				<?php foreach ($products as $product): ?>
-					<option value="<?= $product->getName() ?>"> <?= $product->getName(); ?> </option>
+					<option value="<?= $product->getId() ?>"> <?= $product->getName(); ?> </option>
 				<?php endforeach ?>
 			</select>
 		</div>
@@ -42,7 +42,7 @@
 			<label for="selectProduct3">Sélection un 3è produit :</label>
 			<select name="selectProduct3" id="selectProduct3">
 				<?php foreach ($products as $product): ?>
-					<option value="<?= $product->getName() ?>"> <?= $product->getName(); ?> </option>
+					<option value="<?= $product->getId() ?>"> <?= $product->getName(); ?> </option>
 				<?php endforeach ?>
 			</select>
 		</div>
