@@ -4,12 +4,10 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Shopping Time</title>
-	<?php $clients = require $_SERVER['DOCUMENT_ROOT'] . '/data/users.php'; ?>
-	<?php $products = require $_SERVER['DOCUMENT_ROOT'] . '/data/products.php'; ?>
 </head>
 <body>
 
-	<form action="/validateOrder.php" method="post">
+	<form action="/controllers/validateOrder.php" method="post">
 
 		<div>
 			<label for="selectClient">Sélectionner un client : </label>
