@@ -1,5 +1,5 @@
 <?php 
-require_once $_SERVER['DOCUMENT_ROOT'] . '/models/Client.php';
+require_once BASEPATH . '/models/Client.php';
 
 
 	$client1 = new Client("client1@mail.com", "client1", date('l jS \of F Y h:i:s A'));

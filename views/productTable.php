@@ -1,4 +1,4 @@
-<?php $products = require $_SERVER['DOCUMENT_ROOT'] . '/data/products.php'; ?>
+<?php $products = require BASEPATH . '/data/products.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

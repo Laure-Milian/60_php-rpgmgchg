@@ -1,6 +1,6 @@
 <?php
 
-require_once $_SERVER['DOCUMENT_ROOT'] . '/models/Product.php';
+require_once BASEPATH . '/models/Product.php';
 
 Class Vegetable extends Product {
 

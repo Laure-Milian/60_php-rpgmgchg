@@ -1,4 +1,4 @@
-<?php $users = require $_SERVER['DOCUMENT_ROOT'] . '/data/users.php'; ?>
+<?php $users = require BASEPATH . '/data/users.php'; ?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>

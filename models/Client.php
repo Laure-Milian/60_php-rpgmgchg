@@ -1,6 +1,6 @@
 <?php
 
-require_once $_SERVER['DOCUMENT_ROOT'] . '/models/User.php';
+require_once BASEPATH . '/models/User.php';
 
 Class Client extends User {
 
@@ -17,16 +17,37 @@ Class Client extends User {
 
 	public function buy($product) {
 		$this->addProductToCart($product);
-		$this->setBillAmount($product);
+		$this->addToBillAmount($product);
 	}
 	
 	public function addProductToCart($product) {
 		$this->cart[] = $product;
 	}
 
-	public function setBillAmount($product) {
+	public function addToBillAmount($product) {
 		$price = $product->getPrice();
 		$this->billAmount = $this->billAmount + $price;
 	}
+
+	public function deleteFromCart($idProduct) {
+		foreach ($this->cart as $product) {
+			
+			if ($idProduct === $product->getId()) {
+				
+				$pos = array_search($product, $this->cart);
+				array_splice($this->cart, $pos, 1);
+
+				$this->subtractToBillAmount($product);
+			}
+
+		}
+	}
+
+	public function subtractToBillAmount($product) {
+		$price = $product->getPrice();
+		$this->billAmount = $this->billAmount - $price;
+	}
+
+
 }
 

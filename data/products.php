@@ -1,7 +1,7 @@
 <?php
 
-require_once  $_SERVER['DOCUMENT_ROOT'] . '/models/Vegetable.php';
-require_once  $_SERVER['DOCUMENT_ROOT'] .'/models/Cloth.php';
+require_once  BASEPATH .  '/models/Vegetable.php';
+require_once  BASEPATH . '/models/Cloth.php';
 
 $vege1 = new Vegetable("vege1", "carotte", 5, "Judy Hopps", time());
 $vege2 = new Vegetable("vege2", "laitue", 2, "Caroline", time());

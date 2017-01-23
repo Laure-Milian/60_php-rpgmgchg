@@ -7,7 +7,7 @@
 </head>
 <body>
 
-	<form action="/controllers/validateOrder.php" method="post">
+	<form action="/index.php?page=validation" method="post">
 
 		<div>
 			<label for="selectClient">Sélectionner un client : </label>

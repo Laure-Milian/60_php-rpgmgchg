@@ -5,15 +5,6 @@
 	<title>Validation de commande</title>
 </head>
 <body>
-	<div>
-		<?php
-		 if ($error) {
-		 	echo 'Attention, un des produits que vous avez sélectionné est périmé. ' .
-		 	'Nom du produit concerné : ' . $error->getName();
-		 }
-		?>
-	</div>
-
 	<div> 
 		Client : <?= $currentClient->getId() ?>
 	</div>
@@ -26,7 +17,7 @@
 					<th>Id du produit</th>
 					<th>Prix du produit</th>
 				</tr>
-				<?php foreach ($products as $product) :	?>
+				<?php foreach ($currentClient->getCart() as $product) :	?>
 					<tr>
 						<td><?= $product->getName() ?></td>
 						<td><?= $product->getId() ?></td>
@@ -39,6 +30,21 @@
 
 	<div>
 		Prix total : <?= $currentClient->getBillAmount(); ?> €
+	</div>
+
+	<div>
+		Supprimer un produit du panier :
+		<form action="get">
+			<label for="deleteProduct"></label>
+			<select name="deleteProduct" id="deleteProduct">
+				<?php foreach ($currentClient->getCart() as $product) :	?>
+					<option value="<?= $product->getId() ?>"> <?= $product->getName() ?> </option>
+				<?php endforeach ?>
+			</select>
+			<input type="submit" label="Supprimer ce produit">
+		</form>
+		<?php /*$currentClient->deleteFromCart('vege2');*/
+		echo $currentClient->getBillAmount(); ?>
 	</div>
 </body>
 </html>

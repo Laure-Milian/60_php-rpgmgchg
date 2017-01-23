@@ -5,8 +5,8 @@
 	<title>Document</title>
 <!-- 	<link rel="stylesheet" href="views/table.css"> -->
 	<?php
-	$products_arr = require_once $_SERVER['DOCUMENT_ROOT'] . '/data/products.php';
-	$clients_arr = require_once $_SERVER['DOCUMENT_ROOT'] . '/data/users.php';
+	$products_arr = require_once BASEPATH . '/data/products.php';
+	$clients_arr = require_once BASEPATH . '/data/users.php';
 	?>
 </head>
 <body>
