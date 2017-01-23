@@ -2,8 +2,6 @@
 
 $clients = require_once $_SERVER['DOCUMENT_ROOT'] . '/data/users.php';
 $products = require $_SERVER['DOCUMENT_ROOT'] . '/data/products.php';
-$timestamp = 2;
-echo 'Le timestamp '. $timestamp .' en date est: <strong>Le '.date('d/m/Y', $timestamp) ;
 
 // Retrouver les produits correspondants aux ID sélectionnés
 
@@ -34,14 +32,13 @@ $currentClient = findClient($idClient, $clients);
 
 
 // Utiliser buy() pour chaque produit sélectionné
-
+$error = false;
 foreach ($current_products as $cp) {
 	if (is_a($cp, 'Vegetable')) {
 		if ($cp->isFresh()) {
-			echo $cp->isFresh();
 			$currentClient->buy($cp);
 		} else {
-			echo "ERREUR";	
+			$error = $cp;
 		}
 	} else {
 		$currentClient->buy($cp);
@@ -49,9 +46,9 @@ foreach ($current_products as $cp) {
 }
 
 
-sendView($currentClient);
+sendView($currentClient, $error);
 
-function sendView($currentClient) {
+function sendView($currentClient, $error) {
 	$products = $currentClient->getCart();
 	require $_SERVER['DOCUMENT_ROOT'] .'/views/validateOrder.php';
 }

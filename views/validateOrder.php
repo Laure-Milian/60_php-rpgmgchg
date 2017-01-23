@@ -5,6 +5,14 @@
 	<title>Validation de commande</title>
 </head>
 <body>
+	<div>
+		<?php
+		 if ($error) {
+		 	echo 'Attention, un des produits que vous avez sélectionné est périmé. ' .
+		 	'Nom du produit concerné : ' . $error->getName();
+		 }
+		?>
+	</div>
 
 	<div> 
 		Client : <?= $currentClient->getId() ?>

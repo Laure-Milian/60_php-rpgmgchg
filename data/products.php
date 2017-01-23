@@ -4,7 +4,7 @@ require_once  $_SERVER['DOCUMENT_ROOT'] . '/models/Vegetable.php';
 require_once  $_SERVER['DOCUMENT_ROOT'] .'/models/Cloth.php';
 
 $vege1 = new Vegetable("vege1", "carotte", 5, "Judy Hopps", time());
-$vege2 = new Vegetable("vege2", "laitue", 2, "Caroline", "2484732020");
+$vege2 = new Vegetable("vege2", "laitue", 2, "Caroline", time());
 $vege3 = new Vegetable("vege3", "périmé", 100, "Old producteur", "2");
 
 
