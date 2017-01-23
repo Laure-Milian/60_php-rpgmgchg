@@ -25,8 +25,9 @@ Class Vegetable extends Product {
 		$current = time();
 		$harvest = $this->harvestedAt;
 		$diff = $harvest - $current;
-		$diffHours = $diff / 60 / 60;
-		if ($diffHours < 24) {
+		$diffHours = abs($diff / 60 / 60);
+		echo '<div>' . $diffHours . '</div>';
+		if ($diffHours <= 24) {
 			return true;
 		} else {
 			return false;
