@@ -34,7 +34,7 @@
 
 	<div>
 		Supprimer un produit du panier :
-		<form action="get">
+		<form action="/index.php?page=validation" method="post">
 			<label for="deleteProduct"></label>
 			<select name="deleteProduct" id="deleteProduct">
 				<?php foreach ($currentClient->getCart() as $product) :	?>
@@ -43,7 +43,7 @@
 			</select>
 			<input type="submit" label="Supprimer ce produit">
 		</form>
-		<?php /*$currentClient->deleteFromCart('vege2');*/
+		<?php $currentClient->deleteFromCart('vege2');
 		echo $currentClient->getBillAmount(); ?>
 	</div>
 </body>
