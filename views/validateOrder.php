@@ -6,31 +6,36 @@
 </head>
 <body>
 	<div> 
-		Client : <?= $currentClient->getId() ?>
+		Client : <?= $order->getOrderClient()->getId() ?>
 	</div>
 
-	<div> Liste des produits achetés :
+	<div> Liste des produits sélectionnés :
 		<ul>
 			<table>
 				<tr>
 					<th>Nom du produit</th>
 					<th>Id du produit</th>
 					<th>Prix du produit</th>
+					<th>Commentaire</th>
 				</tr>
-				<?php foreach ($currentClient->getCart() as $product) :	?>
+				<?php foreach ($order->getOrderProducts() as $product) :	?>
 					<tr>
 						<td><?= $product->getName() ?></td>
 						<td><?= $product->getId() ?></td>
 						<td><?= $product->getPrice() ?></td>
+						<td>
+							<?php 
+							if (is_a($product, 'Vegetable') && !$product->isFresh()) {
+								echo "Attention ! Ce produit est périmé.";
+							}
+							?>
+						</td>
 					</tr>				
 				<?php endforeach ?>
 			</table>
 		</ul>
 	</div>
 
-	<div>
-		Prix total : <?= $currentClient->getBillAmount(); ?> €
-	</div>
 
 </body>
 </html>

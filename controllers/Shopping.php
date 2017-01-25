@@ -27,6 +27,10 @@ class ShoppingController {
 		
 	}
 
+	public function getSelectedProducts() {
+		return $this->selectedProducts;
+	}
+
 	public function setSelectedProducts() {
 		$products = require BASEPATH . '/data/products.php';
 		$selected_products_id = [$_POST["selectProduct1"], $_POST["selectProduct2"], $_POST["selectProduct3"]];
@@ -34,15 +38,7 @@ class ShoppingController {
 		$current_products = array_map(function($productsId) use ($products) {
 			foreach ($products as $p) {
 				if ($productsId === $p->getId()) {
-					if (is_a($p, 'Vegetable')) {
-						if ($p->isFresh()) {
-							$this->selectedClient->buy($p);
-						} else {
-							echo "l'un des produits est périmé. Lui, là : " . $p->getId() . " " . $p->getName();
-						}
-					} else {
-						$this->selectedClient->buy($p);
-					}
+					$this->selectedProducts[] = $p;
 				}
 			}
 		}, $selected_products_id);

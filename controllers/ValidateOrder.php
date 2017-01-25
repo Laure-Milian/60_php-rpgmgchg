@@ -1,21 +1,24 @@
 <?php
 
 
-class ValidateOrder {
-
-	private $order;
-
-	public function __construct($data) {
-		$this->order = $data->getSelectedClient();
-	}
-
-	public function getOrder() {
-		return $this->order;
-	}
+class ValidateOrder extends ShoppingController {
 
 	public function recapOrder() {
-		$currentClient = $this->getOrder();
+		$order = $this;
 		require  BASEPATH .'/views/validateOrder.php';	
+	}
+
+	public function __construct() {
+		parent::setSelectedClient();
+		parent::setSelectedProducts();
+	}
+
+	public function getOrderClient() {
+		return parent::getSelectedClient();
+	}
+
+	public function getOrderProducts() {
+		return parent::getSelectedProducts();
 	}
 
 }

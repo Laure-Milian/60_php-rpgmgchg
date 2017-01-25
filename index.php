@@ -10,8 +10,5 @@ if (!isset($_GET['page'])) {
 } 
 
 if ($_GET['page'] === 'validation') {
-	$current_shopping = new ShoppingController();
-	$current_shopping->setSelectedClient();
-	$current_shopping->setSelectedProducts();
-	return (new ValidateOrder($current_shopping))->recapOrder();
+	return (new ValidateOrder())->recapOrder();
 }
