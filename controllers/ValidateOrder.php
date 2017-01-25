@@ -11,6 +11,7 @@ class ValidateOrder extends ShoppingController {
 	public function __construct() {
 		parent::setSelectedClient();
 		parent::setSelectedProducts();
+		$this->buyProducts();
 	}
 
 	public function getOrderClient() {
@@ -21,4 +22,10 @@ class ValidateOrder extends ShoppingController {
 		return parent::getSelectedProducts();
 	}
 
+	public function buyProducts() {
+		$products = $this->getOrderProducts();
+		foreach ($products as $p) {
+			$this->getOrderClient()->buy($p);
+		}
+	}
 }

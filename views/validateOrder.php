@@ -30,10 +30,14 @@
 							}
 							?>
 						</td>
-					</tr>				
+					</tr>			
 				<?php endforeach ?>
 			</table>
 		</ul>
+	</div>
+
+	<div>
+		Le prix de votre panier : <?= $order->getOrderClient()->getBillAmount(); ?>
 	</div>
 
 
