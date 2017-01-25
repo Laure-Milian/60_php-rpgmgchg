@@ -1,8 +1,8 @@
 <?php
 define('BASEPATH', __DIR__);
 
-require BASEPATH . '/controllers/shopping.php';
-require BASEPATH . '/controllers/validateOrder.php';
+require BASEPATH . '/controllers/Shopping.php';
+require BASEPATH . '/controllers/ValidateOrder.php';
 
 
 if (!isset($_GET['page'])) {
