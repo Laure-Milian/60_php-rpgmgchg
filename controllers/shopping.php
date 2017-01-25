@@ -3,6 +3,7 @@
 class ShoppingController {
 
 	private $selectedClient;
+	private $selectedProducts;
 
 	public function home() {
 		$clients = require BASEPATH . '/data/users.php';

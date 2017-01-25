@@ -32,19 +32,5 @@
 		Prix total : <?= $currentClient->getBillAmount(); ?> €
 	</div>
 
-	<div>
-		Supprimer un produit du panier :
-		<form action="/index.php?page=validation" method="post">
-			<label for="deleteProduct"></label>
-			<select name="deleteProduct" id="deleteProduct">
-				<?php foreach ($currentClient->getCart() as $product) :	?>
-					<option value="<?= $product->getId() ?>"> <?= $product->getName() ?> </option>
-				<?php endforeach ?>
-			</select>
-			<input type="submit" label="Supprimer ce produit">
-		</form>
-		<?php $currentClient->deleteFromCart('vege2');
-		echo $currentClient->getBillAmount(); ?>
-	</div>
 </body>
 </html>

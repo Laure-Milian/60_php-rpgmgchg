@@ -29,7 +29,7 @@ Class Client extends User {
 		$this->billAmount = $this->billAmount + $price;
 	}
 
-	public function deleteFromCart($idProduct) {
+	/*public function deleteFromCart($idProduct) {
 		foreach ($this->cart as $product) {
 			
 			if ($idProduct === $product->getId()) {
@@ -46,7 +46,7 @@ Class Client extends User {
 	public function subtractToBillAmount($product) {
 		$price = $product->getPrice();
 		$this->billAmount = $this->billAmount - $price;
-	}
+	}*/
 
 
 }
